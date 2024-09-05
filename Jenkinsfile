@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage("Checkout code") {
             steps {
-                checkout scm
+                git url: 'https://github.com/mosasmita/custom-repo-for-GKE', branch: 'main', credentialsId: env.CREDENTIALS_ID
             }
         }
         stage("Build image") {
